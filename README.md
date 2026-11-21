@@ -15,6 +15,9 @@ Portofolio pribadi satu file. Semua CSS, markup, dan JavaScript ada di `index.ht
 
 ```
 index.html    seluruh situs (satu file)
+img/          foto patung (zeus, hercules, apollo) + foto About
+favicon.svg   ikon tab
+favicon.ico   fallback browser lama
 .nojekyll     mematikan pemrosesan Jekyll di GitHub Pages
 ```
 
@@ -32,8 +35,9 @@ index.html    seluruh situs (satu file)
 
 ## Catatan
 
-- Foto patung di section Pantheon masih hotlink dari Wikimedia Commons. Kredit lisensi ada di tiap `figcaption`, jangan dihapus. Untuk hasil paling stabil, unduh gambarnya, taruh di folder ini, lalu ganti `src`/`data-u` ke path lokal.
-- Situs butuh koneksi internet karena GSAP, font, dan gambar dimuat dari CDN.
+- Foto patung (Zeus, Heracles, Apollo) dan foto About sekarang file lokal di `img/`, bukan hotlink. Ukuran 714×1280, ~165 KB per file.
+- Frame patung rasio 3:4 sementara fotonya 9:16, jadi gambar dipotong. Fokus crop diatur lewat `object-position: 50% 20%` di `.god-i img` — geser angka itu kalau mau menampilkan bagian lain.
+- Situs butuh koneksi internet karena GSAP dan font dimuat dari CDN. Gambar sudah tidak.
 - `localStorage.motion` menyimpan pilihan tombol Motion on/off.
 
 ## Deploy
