@@ -102,12 +102,19 @@
     width: 34px; height: 34px; border-radius: 50%;
     border: 1px solid var(--brass); opacity: 0;
     transition: opacity 0.3s, width 0.35s var(--ease), height 0.35s var(--ease), background 0.3s;
+    margin: 0;
   }
   .ring.on { opacity: 1; }
   .ring.big { width: 72px; height: 72px; background: color-mix(in srgb, var(--brass) 16%, transparent); }
   @media (hover: none), (pointer: coarse) { .ring { display: none !important; } }
   @media (hover: hover) and (pointer: fine) {
-    .ring { display: grid; place-items: center; font: 500 0.6rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone); }
+    .ring {
+      display: grid; place-items: center;
+      font: 500 0.6rem/1 var(--f-mono);
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--bone);
+      margin: 0;
+    }
+    .ring.big { font-size: 0.6rem; margin: 0; line-height: 1; }
   }
 
   /* Preloader */
@@ -515,11 +522,11 @@
 
   /* Contact & Footer */
   .contact { padding-block: clamp(4rem, 14vh, 9rem) clamp(2rem, 6vh, 4rem); }
-  .big {
+  .contact-title, .contact .big {
     margin: 1.5rem 0 0; font-family: var(--f-display); font-stretch: 62%; font-weight: 800; text-transform: uppercase;
     font-size: clamp(3.4rem, 15vw, 15rem); line-height: 0.84; letter-spacing: -0.01em;
   }
-  .big em {
+  .contact-title em, .contact .big em {
     display: block; font-family: var(--f-serif); font-style: italic; font-weight: 400; font-stretch: 100%;
     text-transform: none; letter-spacing: 0; color: var(--brass); font-size: 0.6em; line-height: 1;
     margin-top: 0.15em;
@@ -842,7 +849,7 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="label">Contact</div>
-      <h2 class="big">Let's build<em>something sharp.</em></h2>
+      <h2 class="contact-title">Let's build<em>something sharp.</em></h2>
       <div class="reach">
         <a class="email" id="email" href="mailto:sixkennn@gmail.com">sixkennn@gmail.com</a>
         <button class="copy magnetic" id="copy" type="button"><span id="copy-label">Copy email</span></button>
