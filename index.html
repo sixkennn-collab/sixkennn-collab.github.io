@@ -1461,9 +1461,8 @@
 
     if (window.Synth) window.Synth.thunder();
 
-    // Screen Shake
+    // Flash illumination (NEVER animate transform on body because it breaks position:fixed for ScrollTrigger pinned sections)
     if (window.gsap) {
-      gsap.fromTo('body', { x: (Math.random() - 0.5) * 14, y: (Math.random() - 0.5) * 10 }, { x: 0, y: 0, duration: 0.25, ease: 'elastic.out(1, 0.3)' });
       gsap.fromTo('.flash', { opacity: 0.55 }, { opacity: 0, duration: 0.65, ease: 'power2.out' });
     }
 
